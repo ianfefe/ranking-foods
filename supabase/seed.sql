@@ -1,0 +1,2 @@
+-- Dados de desenvolvimento, aplicados em `npm run db:reset`.
+-- As categorias de pratos e os restaurantes de JF entram na P1.

@@ -1,0 +1,23 @@
+{
+  "name": "ranking-foods",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "mobile": "npm run start -w mobile",
+    "lint": "npm run lint -w mobile",
+    "typecheck": "npm run typecheck -w mobile",
+    "check": "npm run lint && npm run typecheck",
+    "db:start": "supabase start",
+    "db:stop": "supabase stop",
+    "db:reset": "supabase db reset",
+    "db:types": "supabase gen types typescript --local > apps/mobile/src/lib/database.types.ts"
+  },
+  "devDependencies": {
+    "supabase": "^2.122.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
