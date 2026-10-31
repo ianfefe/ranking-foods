@@ -10,8 +10,8 @@ jobs:
     name: Mobile (lint + typecheck)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: npm
@@ -23,9 +23,8 @@ jobs:
     name: Database (migrations aplicam do zero)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: supabase/setup-cli@v1
-        with:
-          version: 2.122.0
+      - uses: actions/checkout@v7
+      # Sem `version`: a action usa a versão do supabase fixada no package-lock.json.
+      - uses: supabase/setup-cli@v3
       - run: supabase db start
       - run: supabase db lint --level error
